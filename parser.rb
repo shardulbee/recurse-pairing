@@ -1,6 +1,7 @@
 module Parser
   class << self
     def parse(input)
+      # pad the parens with spaces on either side so that we can split by space
       tokens = input.gsub(/([()])/, ' \1 ').split(' ').reject(&:empty?)
       output, = parse_tokens(tokens, 0)
       output
