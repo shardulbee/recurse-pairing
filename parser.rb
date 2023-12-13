@@ -44,3 +44,4 @@ assert_equal(['list', '1', '2', %w[list 3 4], '5', %w[list 6 7], '8'], Parser.pa
 assert_equal(['list', ['list', ['list', ['list', ['list', ['list', '1']]]]]], Parser.parse('(list (list (list (list (list (list 1))))))'))
 assert_equal(['list', '1', '2', ['+', '3', '4']], Parser.parse('(list 1 2 (+ 3 4))'))
 assert_equal(['list', '1', '2', ['list', 'nil', '3', '4']], Parser.parse('(list 1 2 (list nil 3 4))'))
+assert_equal(['or', ['and', '"zero"', 'nil', '"never"'], '"James"', "'task", "'time"], Parser.parse('(or (and "zero" nil "never") "James" \'task \'time)'))
