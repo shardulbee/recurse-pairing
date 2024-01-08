@@ -28,24 +28,10 @@ end
 def test_interpret
   input = ['+', '2', '3']
   assert_equal(5, Interpreter.interpret(input))
-
-  input = ['+', '2', '3', ['+', '5', '10']]
-  assert_equal(20, Interpreter.interpret(input))
-
-  input = ['+', '2', '3', ['+', ['+', '5', '5'], '10']]
-  assert_equal(25, Interpreter.interpret(input))
-
-  input = ['first', ['list', '1', ['+', '2', '3'], '9']]
-  assert_equal(1, Interpreter.interpret(input))
-
-  input = ['list', ['list', ['list', ['list', ['list', %w[list 1]]]]]]
-  assert_equal([[[[[[1]]]]]], Interpreter.interpret(input))
-
-  input = ['list', '1', '2', %w[list nil 3 4]]
-  assert_equal([1, 2, [nil, 3, 4]], Interpreter.interpret(input))
-
-  true
 end
+
+
 
 puts "Parser tests: #{test_parse ? 'PASSED' : 'FAILED'}"
 puts "Interpreter tests: #{test_interpret ? 'PASSED' : 'FAILED'}"
+

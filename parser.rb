@@ -20,6 +20,7 @@ module Parser
 
       while idx < tokens.length
         token = tokens[idx]
+
         case token
         when ')'
           # Recursive base case: If we reach a closing parens, we're done parsing this list.
